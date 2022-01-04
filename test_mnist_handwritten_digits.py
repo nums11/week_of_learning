@@ -15,43 +15,6 @@ import time
 def testCustomModel():
 	(X_train, Y_train), (X_test, Y_test) = mnist.load_data()
 	num_classes = 10
-	# test_mat = np.array([
-	# 	[3,5,1,4,6],
-	# 	[2,9,7,8,1],
-	# 	[0,4,1,3,1],
-	# 	[5,6,0,4,2],
-	# 	[7,8,9,5,3]
-	# ])
-
-	# mat_2 = np.array([
-	# 	[
-	# 		[[10,11],
-	# 		 [12,13]],
-	# 		[[14,15],
-	# 		 [16,17]]
-	# 	]
-	# ])
-
-	# print("mat_1\n", mat_1, mat_1.shape)
-	# print("mat_2\n", mat_2, mat_2.shape)
-	# mult = mat_1 * mat_2
-	# print("mult\n", mult, mult.shape)
-	# print(np.matmul(mat_1, mat_2).shape)
-
-	# How to grab all the slices from the array at once.
-	# How to grab 2 at once?
-	# I can easily store all of the traversals in a list
-	# Would it be faster to simply grab the image slices in the double for loop
-	# and do all the other work outside of the for loop? I think so.
-	# It's currently doing the convolution step at every slice as opposed to
-	# Gather all the slices and doing the convolution step at once.
-	# First just removing the list comprehension from the inner for loop
-	# then trying to vectorize the 2d list comprehension into a 1-d list comprehension
-
-	# Figure out how to vectorized multiply 1 slice across all the samples by the weight matrix
-	# I have a hunch that if I reshape W properly, I can do a matrix mulitplication to get the
-	# output that I'm looking for
-
 
 	nn = CustomNeuralNetwork("sparse_categorical_cross_entropy")
 	nn.addInputLayer((28,28,1))
